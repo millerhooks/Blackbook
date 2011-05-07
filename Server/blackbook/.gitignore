@@ -7,4 +7,5 @@
 *.log
 static/media/*
 static/assets/*
+static/uploads
 settings/local.py

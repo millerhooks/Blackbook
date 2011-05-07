@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Home{% endblock %}
+{% block extrahead %}
+
+<script type="text/javascript" src="/media/js/fadeslideshow.js"></script>
+
+<script type="text/javascript">
+
+    /***********************************************
+    * Ultimate Fade In Slideshow v2.0- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+    ***********************************************/
+
+    var mygallery2=new fadeSlideShow({
+	wrapperid: "fadeshow2", //ID of blank DIV on page to house Slideshow
+	dimensions: [630, 310], //width/height of gallery in pixels. Should reflect dimensions of largest image
+	imagearray: [
+                {% for image in slideshow %}
+                    ["/media/{{ image.file }}", "", "_new", "{{ image.description }}"],
+                {% endfor %}
+        ],
+	displaymode: {type:'auto', pause:3000, cycles:0, wraparound:false},
+	persist: false, //remember last viewed slide and recall within same session?
+	fadeduration: 500, //transition duration (milliseconds)
+	descreveal: "ondemand",
+	togglerid: ""
+
+    })
+</script>
+
+{% endblock %}
+
+{% block content %}
+<fieldset class="module aligned {{ fieldset.classes }}" style="padding:10px;width:270px;">
+    <form method="post" action=".">
+        {{ form.as_p }}
+        {% csrf_token %}
+
+        <input type="submit" class="default" value="{% trans 'Submit' %}" style="float:left;margin-left:200px;"/>
+    </form>
+</fieldset>
+
+{% endblock %}

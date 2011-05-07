@@ -1,0 +1,29 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<HEAD>
+    <title>Mechanical Panda {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/media/css/base.css" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
+    {% block extrahead %}{% endblock %}
+</HEAD>
+<BODY>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+
+        <!--
+        <div class="footer">
+            {% block footer %}
+            PUT TWITTER AND SHIT HERE
+            {% endblock %}
+        </div>
+        -->
+    </div>
+
+</BODY>
+</HTML>
