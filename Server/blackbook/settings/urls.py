@@ -26,4 +26,7 @@ if settings.DEBUG:
         url(r'^static/media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
         }),
+        url(r'^staticfiles/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.STATICFILES_DIRS[0],
+        }),
     )

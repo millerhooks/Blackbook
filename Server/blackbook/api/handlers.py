@@ -90,14 +90,11 @@ def point(longitude, latitude):
 ##
 
 class TagHandler(BlackbookBaseHandler):
-    allowed_methods = ('GET')
+    allowed_methods = ('GET', 'POST')
 
     @validate(PaginationForm, 'GET')
     def read(self, request):
         pagination_form = request.form
-        geo_form = GeoForm(request.GET)
-        search_form = APISearchForm(request.GET)
-
         queryset = Tag.objects.all()
 
         page = self.paginate(

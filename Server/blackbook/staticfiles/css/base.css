@@ -1,0 +1,34 @@
+/* Front Page */
+
+body {
+    background-image: url('/staticfiles/images/street.png');
+    background-size: 100%;
+    background-color: #333333;
+    font-family: helvetica;
+    font-size: 10pt;
+    height:100%;
+
+
+}
+
+a{
+    color: #cc6699;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+}
+
+#container {
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+    width: 1024px;
+
+
+    margin-left: auto ;
+    margin-right: auto ;
+    /*z-index: 999;*/
+}
