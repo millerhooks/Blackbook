@@ -18,7 +18,7 @@ def index(request):
             obj.client = plan.client
             obj.save()
             
-    return render_to_response('index.html', {
+    return render_to_response('iconography/tagupload.html', {
         'form'     :    form,         
         'request'  :    request,
         },
