@@ -1,3 +1,0 @@
-Use the mmbs script to install postGIS. 
-
->$ ./mmbs.sh postgis
